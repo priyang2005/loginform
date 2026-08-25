@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Portal | Sign In</title>
+
+    <!-- Professional Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: "Inter", -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", Arial, sans-serif;
+
+            background: #f4f6f8;
+
+            color: #1e293b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        /* =====================================================
+           MAIN LOGIN AREA
+        ===================================================== */
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 440px;
+        }
+
+
+        /* =====================================================
+           LOGIN CARD
+        ===================================================== */
+
+        .login-card {
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 12px;
+
+            padding: 42px 42px 36px;
+
+            box-shadow:
+                0 10px 25px rgba(15, 23, 42, 0.06),
+                0 2px 6px rgba(15, 23, 42, 0.04);
+
+            animation: cardAppear 0.6s ease-out;
+        }
+
+
+        /* =====================================================
+           CARD ANIMATION
+        ===================================================== */
+
+        @keyframes cardAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           BRAND / HEADER
+        ===================================================== */
+
+        .brand {
+            text-align: center;
+
+            margin-bottom: 34px;
+        }
+
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 10px;
+
+            background: #1e3a5f;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+
+            font-size: 20px;
+            font-weight: 700;
+
+            letter-spacing: -1px;
+        }
+
+
+        .brand h1 {
+            font-size: 25px;
+
+            font-weight: 700;
+
+            letter-spacing: -0.5px;
+
+            color: #172033;
+
+            margin-bottom: 8px;
+        }
+
+
+        .brand p {
+            font-size: 14px;
+
+            color: #64748b;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .form-group {
+            margin-bottom: 21px;
+        }
+
+
+        .form-label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #334155;
+        }
+
+
+        /* =====================================================
+           INPUT
+        ===================================================== */
+
+        .input-wrapper {
+            position: relative;
+        }
+
+
+        .input-wrapper input {
+            width: 100%;
+
+            height: 46px;
+
+            padding: 0 14px;
+
+            background: #ffffff;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            color: #1e293b;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .input-wrapper input::placeholder {
+            color: #94a3b8;
+        }
+
+
+        .input-wrapper input:hover {
+            border-color: #94a3b8;
+        }
+
+
+        .input-wrapper input:focus {
+            border-color: #416b95;
+
+            box-shadow:
+                0 0 0 3px rgba(65, 107, 149, 0.10);
+
+            background: #ffffff;
+        }
+
+
+        /* =====================================================
+           PASSWORD VISIBILITY
+        ===================================================== */
+
+        .password-wrapper input {
+            padding-right: 48px;
+        }
+
+
+        .password-toggle {
+            position: absolute;
+
+            right: 13px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            font-family: inherit;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            padding: 4px;
+        }
+
+
+        .password-toggle:hover {
+            color: #334155;
+        }
+
+
+        /* =====================================================
+           FORM OPTIONS
+        ===================================================== */
+
+        .form-options {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin: 4px 0 25px;
+        }
+
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            cursor: pointer;
+        }
+
+
+        .remember input {
+            width: 14px;
+            height: 14px;
+
+            accent-color: #1e3a5f;
+
+            cursor: pointer;
+        }
+
+
+        .forgot-password {
+            color: #315a82;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 500;
+        }
+
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-btn {
+            width: 100%;
+
+            height: 46px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #1e3a5f;
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.15s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .login-btn:hover {
+            background: #274b73;
+
+            box-shadow:
+                0 5px 12px rgba(30, 58, 95, 0.16);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* SUBTLE BUTTON BOUNCE */
+
+        .login-btn:active {
+            animation: buttonBounce 0.3s ease;
+        }
+
+
+        @keyframes buttonBounce {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.98);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* =====================================================
+           FLASK MESSAGE
+        ===================================================== */
+
+        .message {
+            margin-top: 20px;
+
+            padding: 11px 13px;
+
+            border-radius: 6px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            background: #f0fdf4;
+
+            border: 1px solid #bbf7d0;
+
+            color: #166534;
+        }
+
+
+        /* =====================================================
+           SECURITY NOTE
+        ===================================================== */
+
+        .security-note {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-top: 25px;
+
+            color: #94a3b8;
+
+            font-size: 11px;
+        }
+
+
+        .security-dot {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #64748b;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            text-align: center;
+
+            margin-top: 24px;
+
+            color: #94a3b8;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .login-card {
+                padding: 34px 25px 30px;
+            }
+
+            .brand h1 {
+                font-size: 23px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="login-wrapper">
+
+        <section class="login-card">
+
+            <!-- =================================================
+                 BRAND
+            ================================================== -->
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    PS
+                </div>
+
+                <h1>Admin Portal</h1>
+
+                <p>
+                    Sign in to access your administration dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
+
+            <form action="/" method="POST">
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="username"
+                    >
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="password"
+                    >
+                        Password
+                    </label>
+
+                    <div class="input-wrapper password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword()"
+                        >
+                            SHOW
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="form-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            name="remember"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot-password"
+                    >
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Sign In
+                </button>
+
+            </form>
+
+
+            <!-- =================================================
+                 FLASK MESSAGE
+            ================================================== -->
+
+            {% if message %}
+
+                <div class="message">
+                    {{ message }}
+                </div>
+
+            {% endif %}
+
+
+            <!-- SECURITY -->
+
+            <div class="security-note">
+
+                <span class="security-dot"></span>
+
+                Secure administrator access
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            © 2026 Product Solutions. All rights reserved.
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         PASSWORD TOGGLE
+    ====================================================== -->
+
+    <script>
+
+        function togglePassword() {
+
+            const password =
+                document.getElementById("password");
+
+            const button =
+                document.querySelector(".password-toggle");
+
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                button.textContent = "HIDE";
+
+            } else {
+
+                password.type = "password";
+
+                button.textContent = "SHOW";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
